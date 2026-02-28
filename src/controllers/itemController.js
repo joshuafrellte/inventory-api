@@ -14,7 +14,7 @@ const getItems = async (req, res) => {
     }
 }
 
-const getItemById = async (req, res) => {
+const getItem = async (req, res) => {
     try {
         const id = req.params.id
         const [rows] = await pool.query('SELECT * FROM Items WHERE id=?',
@@ -145,7 +145,7 @@ const deleteItem = async (req, res) => {
 
 module.exports = {
     getItems,
-    getItemById,
+    getItem,
     addItem,
     updateItem,
     deleteItem,
